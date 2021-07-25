@@ -1,0 +1,24 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Caneta BIC Verde",
+      "price": "2.79"
+    },
+    {
+      "id": 2,
+      "name": "Lapis Faber Castell",
+      "price": 3.59
+    },
+    {
+      "id": 3,
+      "name": "Caderno 200 Folhas",
+      "price": 40.89
+    },
+    {
+      "name": "Tintes Coloral 20L",
+      "price": "79.90",
+      "id": 4
+    }
+  ]
+}
