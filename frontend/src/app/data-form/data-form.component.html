@@ -1,0 +1,100 @@
+<mat-card>
+    <!-- FORMULARIO -->
+    <mat-card-title>DATA-FORM</mat-card-title>
+    <form [formGroup]="forme">
+
+        <!-- NOME -->
+        <mat-form-field>
+            <input type="text" matInput placeholder="Nome" formControlName="nome" id="nome" #nome>
+        </mat-form-field>
+        <div *ngIf="!forme.controls['nome'].valid && forme.controls['nome'].touched" class="alert">
+            *Nome é obrigatório
+        </div>
+
+
+        <!-- EMAIL -->
+        <mat-form-field>
+            <input type="text" matInput placeholder="Email" formControlName="email" id="email" (blur)="errorEmail()">
+        </mat-form-field>
+        <div *ngIf="!forme.controls['email'].valid && this.forme.controls['email'].touched" class="alert ">
+            *Email é obrigatório
+        </div>
+
+        <!-- ENDEREÇO -->
+        <div formGroupName="endereco" class="endereço">
+
+            <!-- CEP -->
+            <mat-form-field class="cep">
+                <input type="text" matInput placeholder="Cep" formControlName="cep" id="cep" (blur)="consultaCep()">
+            </mat-form-field>
+            <!-- <div *ngIf="!forme.controls['cep'].valid && forme.controls['cep'].touched" class="alert cep">
+                    *CEP Inválido*
+                </div>  -->
+
+            <!-- NUMERO -->
+            <mat-form-field class="numero">
+                <input type="text" matInput placeholder="Número" formControlName="numero" id="numero">
+            </mat-form-field>
+            <!-- <div *ngIf="!forme.controls['numero'].valid && forme.controls['numero'].touched" class="alert numero">
+                    *Número Inválido*
+                </div>  -->
+
+            <!-- COMPLEMENTO -->
+            <mat-form-field class="complemento">
+                <input type="text" matInput placeholder="Complemento" formControlName="complemento" id="complemento">
+            </mat-form-field>
+
+            <!--RUA-->
+            <mat-form-field class="rua">
+                <input type="text" matInput placeholder="Rua" formControlName="rua" id="rua">
+            </mat-form-field>
+            <!-- <div *ngIf="!forme.controls['rua'].valid && forme.controls['rua'].touched" class="alert">
+                    *Rua Inválido*
+                </div>  -->
+
+            <!--BAIRRO-->
+            <mat-form-field class="bairro">
+                <input type="text" matInput placeholder="Bairro" formControlName="bairro" id="bairro">
+            </mat-form-field>
+            <!-- <div *ngIf="!forme.controls['bairro'].valid && forme.controls['bairro'].touched" class="alert">
+                    *Bairro Inválido*
+                </div> -->
+
+            <!--CIDADE-->
+            <mat-form-field class="cidade">
+                <input type="text" matInput placeholder="Cidade" formControlName="cidade" id="cidade">
+            </mat-form-field>
+            <!-- <div *ngIf="!forme.controls['cidade'].valid && forme.controls['cidade'].touched" class="alert">
+                *Cidade Inválido*
+            </div> -->
+
+            <!--ESTADO-->
+            <!-- <mat-form-field class="estado">
+
+                <input type="text" matInput>
+            </mat-form-field> -->
+            <!-- <div *ngIf="!forme.controls['estado'].valid && forme.controls['estado'].touched" class="alert">
+                    *Estado Inválido*
+                </div> -->
+        </div>
+
+        <!-- BOTÃO -->
+        <div class="botoes">
+            <button mat-raised-button class="btn" type="submit" (click)="onSubmit()">
+                Enviar
+            </button>
+            <button mat-raised-button class="btn-cancel" type="button" [disabled]="!forme.dirty"
+                (click)="limparForme()">
+                Limpar
+            </button>
+        </div>
+    </form>
+</mat-card>
+
+<div>
+    <select class="aa">
+        <option *ngFor="let cargo of cargo" [value]="cargo"> {{ cargo.desc }} </option>
+    </select>
+</div>
+
+<app-form-debu [form]="forme"></app-form-debu>

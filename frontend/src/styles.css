@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.red {
+  color: #d23338;
+}
+
+.alinhar-icones {
+  vertical-align: middle;
+}
+/* middle = centro */
+
+.msg-success {
+  color: white;
+}
+.msg-error {
+  background-color: #ff4d4d;
+  color: white;
+}

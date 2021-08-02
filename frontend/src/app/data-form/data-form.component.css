@@ -1,0 +1,65 @@
+form {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+form .alert {
+  font-size: 12px;
+  color: rgb(252, 74, 74);
+}
+
+form .btn {
+  margin-top: 20px;
+  max-width: 75px;
+  color: rgb(0, 0, 0);
+  margin-right: 10px;
+}
+
+form .btn-cancel {
+  margin-top: 20px;
+  max-width: 75px;
+  color: rgb(255, 55, 55);
+}
+
+form .botoes {
+  display: flex;
+}
+
+/* GRID */
+
+form .endereço {
+  display: grid;
+  column-gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  /* grid-template-rows: 1fr 1fr 1fr; */
+  grid-template-areas:
+    "cep numero complemento complemento"
+    "rua rua rua rua"
+    "bairro bairro cidade estado";
+}
+.cep {
+  grid-area: cep;
+}
+.numero {
+  grid-area: numero;
+}
+.complemento {
+  grid-area: complemento;
+}
+.rua {
+  grid-area: rua;
+}
+.bairro {
+  grid-area: bairro;
+}
+.cidade {
+  grid-area: cidade;
+}
+.estado {
+  grid-area: estado;
+}
+
+.aa {
+  width: 20px;
+}

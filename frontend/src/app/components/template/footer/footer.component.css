@@ -1,0 +1,16 @@
+
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    bottom: 0;
+    font-size: 15px;
+    font-weight: 320;
+}
+
+.footer .span {
+    vertical-align: middle;
+    padding-right: 1px;
+    color: #d23338
+}
+ 

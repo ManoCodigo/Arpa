@@ -1,0 +1,112 @@
+
+<mat-card>
+    <!-- FORMULARIO -->
+    <mat-card-title>TEMPLATE-FORM</mat-card-title>
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    
+        <!-- NOME -->
+        <mat-form-field>
+            <input type="text" matInput placeholder="Nome" 
+             name="nome" id="nome" [(ngModel)]="usuario.nome" required 
+             #nome="ngModel">
+            </mat-form-field>
+            <div *ngIf="!nome.valid && nome.touched" class="alert">
+                *Nome é Obrigatório*
+            </div> 
+
+        <!-- EMAIL -->
+        <mat-form-field>
+            <input type="text" matInput placeholder="Email" 
+             name="email" id="email" [(ngModel)]="usuario.email" required
+             #email="ngModel">
+        </mat-form-field>
+         <div *ngIf="!email.valid && email.touched" class="alert">
+                *Email Inválido*
+            </div> 
+
+
+
+                         <!-- ENDEREÇO -->
+        <div ngModelGroup="endereço" class="endereço">
+        <!-- CEP -->
+        <mat-form-field class="cep">
+            <input type="text" matInput placeholder="Cep" 
+             name="cep" id="cep" [(ngModel)]="usuario.cep" required
+             #cep="ngModel" (blur)="consultaCep($any($event.target).value, f)">
+        </mat-form-field>
+            <!-- <div *ngIf="!cep.valid && cep.touched" class="alert">
+                *CEP Inválido*
+            </div> -->
+
+        <!-- NUMERO -->
+        <mat-form-field class="numero">
+            <input type="text" matInput placeholder="Número" 
+             name="numero" id="numero" [(ngModel)]="usuario.numero" required
+             #numero="ngModel">
+        </mat-form-field>
+            <div *ngIf="!numero.valid && numero.touched" class="alert numero">
+                *Número Inválido*
+            </div> 
+
+        <!-- COMPLEMENTO -->
+        <mat-form-field class="complemento">
+            <input type="text" matInput placeholder="Complemento" 
+            name="complemento" id="complemento" [(ngModel)]="usuario.complemento"
+            #complemento="ngModel">
+        </mat-form-field>
+        
+        <!--RUA-->
+        <mat-form-field class="rua">
+            <input type="text" matInput placeholder="Rua" 
+            name="rua" id="rua" [(ngModel)]="usuario.rua" required
+            #rua="ngModel">
+        </mat-form-field>
+            <!-- <div *ngIf="!rua.valid && rua.touched" class="alert">
+                *Rua Inválido*
+            </div> -->
+        
+        <!--BAIRRO-->
+        <mat-form-field class="bairro">
+            <input type="text" matInput placeholder="Bairro" 
+            name="bairro" id="bairro" [(ngModel)]="usuario.bairro" required
+            #bairro="ngModel">
+        </mat-form-field>
+            <!-- <div *ngIf="!bairro.valid && bairro.touched" class="alert">
+                *Bairro Inválido*
+            </div> -->
+            
+        <!--CIDADE-->
+        <mat-form-field class="cidade">
+            <input type="text" matInput placeholder="Cidade" 
+            name="cidade" id="cidade" [(ngModel)]="usuario.cidade" required
+            #cidade="ngModel">
+        </mat-form-field>
+        <!-- <div *ngIf="!cidade.valid && cidade.touched" class="alert">
+            *Cidade Inválido*
+        </div--> 
+
+        <!--ESTADO-->
+        <mat-form-field class="estado">
+            <input type="text" matInput placeholder="Estado" 
+            name="estado" id="estado" [(ngModel)]="usuario.estado" required
+            #estado="ngModel">
+        </mat-form-field>
+            <!-- <div *ngIf="!estado.valid && estado.touched" class="alert">
+                *Estado Inválido*
+            </div> -->
+        </div>
+            
+            <!-- BOTÃO -->
+            <div class="botoes">
+                <button mat-raised-button class="btn" type="submit" [disabled]="!f.valid">
+                    Enviar
+                </button>
+                <button mat-raised-button class="btn-cancel" type="button" (click)="limpaForm(f)"
+                [disabled]="!f.dirty">
+                    Limpar
+                </button>
+            </div>
+    </form>
+</mat-card>
+
+<app-form-debu [form]="f"></app-form-debu>
